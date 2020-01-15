@@ -1,16 +1,16 @@
-# 今わかっている問題点
+# 仕様
 
 
 
-### ・ラズパイ 側でKerasがpip install できない
+### ・実行環境
 
-### →一応できたがtensorflowの方で少々問題あり
+python3
 
+Keras
 
+Opencv
 
-### ・vscodeとPyCharm側でエラーの種類が違っている
+local	: MacbookPro
 
-### →vscodeで進めていく
-
-
+実機　: Raspberry Pi3
 
