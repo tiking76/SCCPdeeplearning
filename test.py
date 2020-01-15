@@ -34,5 +34,3 @@ print("正解率(acc)：", score[1])
 
 # モデルの保存
 model.save("MNIST.h5")
-
-
