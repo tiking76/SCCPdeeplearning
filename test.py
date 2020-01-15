@@ -1,15 +1,30 @@
+"""This is a test program."""
 from keras.datasets import mnist
-from keras.models import Sequential
-from keras.layers.core import Dense, Activation
 from keras.utils import np_utils
+import numpy as np
+
+from keras.models import Sequential
+from keras.layers.core import Dense, Activation, Flatten
+from keras.layers import Conv2D, Reshape, MaxPooling2D, Dropout
+
 
 # mnistの読み込み
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
 # モデル構築
 model = Sequential()
-model.add(Dense(512, input_dim=(784)))
+
+model.add(Reshape((28, 28, 1), input_shape=(28, 28)))
+model.add(Conv2D(32, (3, 3)))
 model.add(Activation("relu"))
+model.add(MaxPooling2D((2, 2)))
+model.add(Dropout(0.1))
+
+model.add(Flatten())
+model.add(Dense(784))
+model.add(Activation("relu"))
+model.add(Dropout(0.1))
+
 model.add(Dense(10))
 model.add(Activation("softmax"))
 
@@ -18,8 +33,8 @@ model.compile(loss="categorical_crossentropy", optimizer="sgd", metrics=["accura
 
 # データのフォーマット修正
 # 画像
-X_train = X_train.reshape(60000, 784)/255
-X_test = X_test.reshape(10000, 784)/255
+X_train = np.array(X_train)/255
+X_test = np.array(X_test)/255
 
 # ラベル
 y_train = np_utils.to_categorical(y_train)

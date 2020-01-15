@@ -8,5 +8,3 @@ cv2.imshow("Color", IMG)
 cv2.imwrite("result.png", IMG)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
-
