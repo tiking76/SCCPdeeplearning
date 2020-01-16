@@ -8,10 +8,18 @@ Keras
 
 Opencv
 
+numpy
+
+pip
+
 local	: MacbookPro
 
 実機　: Raspberry Pi3
 
 editor : VScode
+
+dataset : MNIST
+
+
 
 

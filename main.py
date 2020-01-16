@@ -4,8 +4,6 @@ import numpy as np
 from keras.models import load_model
 
 
-
-
 # ここの数字は0はwebカメラ使用時、それ以外は1オリジンでやっていく。失敗したときは-1が帰ってくる
 cap = cv2.VideoCapture(0)
 
@@ -50,3 +48,4 @@ model = load_model("MNIST.h5")
 result = model.predict_classes(Xt)
 
 print("結果", result[0])
+
