@@ -48,4 +48,3 @@ model = load_model("MNIST.h5")
 result = model.predict_classes(Xt)
 
 print("結果", result[0])
-
